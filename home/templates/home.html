@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown to March 20, 2027</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+    
+    <style>
+        .clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        .your-clock {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock-container">
+        <h1>Counting down to March 20, 2027</h1>
+        <div class="your-clock"></div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // 1. Define the target date: March 20, 2027
+            var targetDate = new Date("March 20, 2027 17:00:00").getTime();
+            
+            // 2. Get the current date
+            var currentDate = new Date().getTime();
+
+            // 3. Calculate the difference in seconds
+            var diff = (targetDate - currentDate) / 1000;
+
+            // 4. Initialize FlipClock
+            var clock = $('.your-clock').FlipClock(diff, {
+                clockFace: 'DailyCounter',
+                countdown: true
+            });
+        });
+    </script>
+</body>
+</html>
